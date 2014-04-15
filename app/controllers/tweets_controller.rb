@@ -3,9 +3,10 @@ class TweetsController < ApplicationController
     @tweet = Tweet.new(tweet_params)
     if @tweet.save
       current_user.tweets << @tweet
+      @tweet.mention_mail
       redirect_to :back, notice: "Tweet Created."
     else
-      render user_path(current_user)
+      redirect_to user_path(current_user), :flash => { :error => "BAD TWEET!" }
     end
   end
 

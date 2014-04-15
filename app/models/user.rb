@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   has_many :tweets
   validates_presence_of :handle
 
+  before_create :welcome_message
 
   def welcome_message
     UserMailer.welcome_message(self).deliver

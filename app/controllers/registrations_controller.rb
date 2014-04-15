@@ -6,7 +6,6 @@ class RegistrationsController < Devise::RegistrationsController
   def create
     super
 
-    User.last.welcome_message
   end
 
   def update

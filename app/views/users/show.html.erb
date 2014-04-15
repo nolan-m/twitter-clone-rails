@@ -1,3 +1,6 @@
+
+<h3><%= @user.handle %>'s Page</h3>
+
 <% if current_user == @user %>
   <%= form_for @tweet do |t| %>
     <%= t.label :content, "TWEET" %>
@@ -8,9 +11,10 @@
   <% end %>
 <% end %>
 
+<%= render "layouts/errors", :object => @tweet %>
 <ul>
   <% @user.tweets.each do |t| %>
-   <li> <%= t.content %> | tweeted <%= time_ago_in_words(t.created_at) %> ago.</li>
+   <li> <%= t.print_tweet.html_safe %> | tweeted <%= time_ago_in_words(t.created_at) %> ago.</li>
   <% end %>
 </ul>
 

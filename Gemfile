@@ -14,6 +14,8 @@ gem 'letter_opener'
 gem 'better_errors'
 gem 'rspec-rails'
 gem 'shoulda-matchers'
+gem 'textacular'
+gem 'binding_of_caller'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
