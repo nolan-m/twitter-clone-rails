@@ -5,5 +5,5 @@ def login(user)
 
   fill_in 'Email', :with => user.email
   fill_in 'Password', :with => user.password
-  click_button 'Submit'
+  click_button 'Sign in'
 end
