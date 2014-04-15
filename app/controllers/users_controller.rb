@@ -10,6 +10,4 @@ class UsersController < ApplicationController
     @tweet = Tweet.new
     @user = User.find(params[:id])
   end
-
-
 end

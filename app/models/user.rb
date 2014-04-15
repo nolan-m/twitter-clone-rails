@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :tweets
+  validates_presence_of :handle
+
 
   def welcome_message
     UserMailer.welcome_message(self).deliver
