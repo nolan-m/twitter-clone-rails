@@ -1,6 +1,10 @@
 
 <h3><%= @user.handle %>'s Page</h3>
 
+<% if current_user != @user %>
+  <%= link_to "Follow", relationships_path(:params => {:id => @user.id}), :method => :post, :class => 'btn btn-primary' %>
+<% end %>
+
 <% if current_user == @user %>
   <%= form_for @tweet do |t| %>
     <%= t.label :content, "TWEET" %>
@@ -17,4 +21,5 @@
    <li> <%= t.print_tweet.html_safe %> | tweeted <%= time_ago_in_words(t.created_at) %> ago.</li>
   <% end %>
 </ul>
+
 
